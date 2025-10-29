@@ -4,6 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 @app.route('/time')
+@app.route('/api/time')
 def get_time():
     # current time with 1 decimal place for tenths of a second
     now = datetime.now()
