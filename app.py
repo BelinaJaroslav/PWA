@@ -10,6 +10,10 @@ def get_time():
     time_str = now.strftime("%H:%M:%S") + f".{int(now.microsecond / 100000)}"
     return jsonify({"time": time_str})
 
+@app.route('/')
+def index():
+    return send_file('index.html')
+    
 if __name__ == '__main__':
     # Run on localhost; Nginx will proxy to this (e.g., 127.0.0.1:5000)
     app.run(host='127.0.0.1', port=5000)
